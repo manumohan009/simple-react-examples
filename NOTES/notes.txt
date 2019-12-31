@@ -1,0 +1,20 @@
+Reducers
+    Specify how app state changes in response to actions sent to the store
+    Function that accepts state and action as arguments, and return the next state of the application
+    (previousState, action) => newState
+
+store
+    one store for the entire application
+    responsibilities - 
+        holds the application state
+        allows access to state via getState()
+        allows state to be updated via dispatch(action)
+        resisters listeners via subscribe(listener)
+        handles unregistering of listener via the function returned by subscribe(listener)
+        
+
+Redux Thunk
+    Action creator that returns a function that gets the dispatch 
+    If redux-thunk middleware is enabled, anytime you attempt to dispatch a function instead of an object,
+     the middleware wil call that function with dispatch method itself as the first argument 
+    
