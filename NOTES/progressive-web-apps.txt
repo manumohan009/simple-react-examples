@@ -1,0 +1,33 @@
+Progressive Web Apps
+    HTTPS
+        letsencrypt.org - free, automated and open Certificate authority
+        cloudflare - cdn 
+    App Manifest
+        It is a simple json file that gives the developers the ability to control how the app should appear in the areas where they expect to see the app 
+            such as the mobile device home screen. Define how the app is going to launch and how it is goin to look
+        realfavicongenerator - to generate icons
+        splash screen
+    Service Worker
+        It is a script that runs on browser in the background separate from the web app
+        Generally used for features that donot need a webpage or user interaction 
+        It is a background worker that works as a programmable proxy that allows us to control what happens on a request by request basis
+        It makes our app work offline
+        Background sync 
+        Push notifications
+        serviceWorker.js and registerServiceWorker() in app.js
+        When a app make a nerwork request it goes through the service worker- service worker uses the cache api 
+        Cache Storage in browser
+        On revisits - the app can use the cached js files
+        Steps to add service worker
+            install swprecache library
+                build: react-scripts build && sw-precache --config=sw-precache-config.js
+            in indes.js file
+                if('serviceWorker' in navigator){
+                    window.addEventListener('load', function(){
+                        navigator.serviceWorker.register('/service-worker');
+                    });
+                }
+            add manifest.json file
+            sw-precache-config.js file
+            serviceWorker.register()
+

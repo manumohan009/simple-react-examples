@@ -17,4 +17,53 @@ Redux Thunk
     Action creator that returns a function that gets the dispatch 
     If redux-thunk middleware is enabled, anytime you attempt to dispatch a function instead of an object,
      the middleware wil call that function with dispatch method itself as the first argument 
+
+
+Redux
+Redux is a predictable state container for JavaScript apps.
+Some of the nice things you get with using Redux include logging, hot reloading, time travel, universal apps, record and replay
+Have a single source of truth: The state of your whole application is stored in an object tree within a single Redux store.
+Redux principle #1
+    ONE application STATE OBJECT managed by ONE STORE
+Redux principle #2
+    STATE is read-only
+    The only way to change the state is to emit an action, an object describing what happened
+Redux principle #2
+    To specify how the state tree is transformed by actions, you write pure reducers.
+
+Here are a few things you learned in this chapter:
+
+    Redux is a predictable state container for JavaScript apps.
+    The createStore factory function from Redux is used to create a Redux STORE.
+    The Reducer is the only mandatory argument passed into createStore()
+    A REDUCER is just a function. A function that takes in two parameters. The first is the STATE of the app, and the other is an ACTION.
+    A Reducer always returns the new stateof your application.
+    The Initial State of your application, initialState is the second argument passed into the createStore function call.
+    Store.getState() will return the current state of your application. Where Store is a valid Redux STORE.
+
     
+Here are a few things you learned in this chapter:
+
+    Unlike setState() in pure React, the only way you update the state of a Redux application is by dispatching an action.
+    An action is accurately described with a plain JavaScript object, but it must have a type field.
+    In a Redux app, every action flows through the reducer. All of them.
+    By using a switch statement, you can handle different action types within your Reducer.
+    Action Creators are simply functions that return action objects.
+    It is a common practice to have the major actors of a redux app live within their own folder/directory.
+    You should not mutate the state received in your Reducer. Instead, you should always return a new copy of the state.
+    To subscribe to store updates, use the store.subscribe() method.
+
+Redux offers a tradeoff. It asks you to:
+    Describe application state as plain objects and arrays.
+    Describe changes in the system as plain objects.
+    Describe the logic for handling changes as pure functions.
+
+These limitations are appealing to me because they help build apps that:
+    Persist state to a local storage and then boot up from it, out of the box.
+    Pre-fill state on the server, send it to the client in HTML, and boot up from it, out of the box.
+    Serialize user actions and attach them, together with a state snapshot, to automated bug reports, so that the product developers can replay them to reproduce the errors.
+    Pass action objects over the network to implement collaborative environments without dramatic changes to how the code is written.
+    Maintain an undo history or implement optimistic mutations without dramatic changes to how the code is written.
+    Travel between the state history in development, and re-evaluate the current state from the action history when the code changes, a la TDD.
+    Provide full inspection and control capabilities to the development tooling so that product developers can build custom tools for their apps.
+    Provide alternative UIs while reusing most of the business logic.

@@ -1,6 +1,8 @@
 import UserActionTypes from './user.types';
 import axios from 'axios';
 
+
+// Action creators 
 export const fetchUsersStart = ()=>({
     type: UserActionTypes.FETCH_USERS_START
 });
