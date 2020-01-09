@@ -1,0 +1,127 @@
+What is React?
+What are the major features of React?
+    The major features of React are:
+
+    It uses VirtualDOM instead RealDOM considering that RealDOM manipulations are expensive.
+    Supports server-side rendering.
+    Follows Unidirectional data flow or data binding.
+    Uses reusable/composable UI components to develop the view.
+
+What are Pure Components?
+    React.PureComponent is exactly the same as React.Component except that it handles the shouldComponentUpdate() method for you.
+     When props or state changes, PureComponent will do a shallow comparison on both props and state.
+     Component on the other hand won't compare current props and state to next out of the box.
+     Thus, the component will re-render by default whenever shouldComponentUpdate is called.
+
+What is the purpose of callback function as an argument of setState()?
+    The callback function is invoked when setState finished and the component gets rendered.
+     Since setState() is asynchronous the callback function is used for any post action.
+
+How to bind methods or event handlers in JSX callbacks?
+    There are 3 possible ways to achieve this
+        Binding in Constructor:
+            constructor(props) {
+                super(props)
+                this.handleClick = this.handleClick.bind(this)
+            }
+
+        Public class fields syntax
+            handleClick = () => {
+                console.log('this is:', this)
+            }
+
+        Arrow functions in callbacks
+            <button onClick={(event) => this.handleClick(event)}>
+                {'Click me'}
+            </button>
+
+What are synthetic events in React?
+    SyntheticEvent is a cross-browser wrapper around the browser's native event.
+    It's API is same as the browser's native event, including stopPropagation() and preventDefault(),
+    except the events work identically across all browsers.
+
+How to create refs?
+    class MyComponent extends React.Component {
+    constructor(props) {
+        super(props)
+        this.myRef = React.createRef()
+    }
+    render() {
+        return <div ref={this.myRef} />
+    }
+    }
+
+What is Virtual DOM?
+    The Virtual DOM (VDOM) is an in-memory representation of Real DOM.
+    The representation of a UI is kept in memory and synced with the "real" DOM.
+    It's a step that happens between the render function being called and the displaying of elements on the screen.
+    This entire process is called reconciliation.
+
+What is the difference between Shadow DOM and Virtual DOM?
+    The Shadow DOM is a browser technology designed primarily for scoping variables and CSS in web components.
+    The Virtual DOM is a concept implemented by libraries in JavaScript on top of browser APIs.
+
+What is React Fiber?
+    Fiber is the new reconciliation engine or reimplementation of core algorithm in React v16.
+    The goal of React Fiber is to increase its suitability for areas like animation, layout, gestures,
+    ability to pause, abort, or reuse work and assign priority to different types of updates; and new concurrency primitives.
+
+    The goal of React Fiber is to increase its suitability for areas like animation, layout, and gestures.
+    Its headline feature is incremental rendering: the ability to split rendering work into chunks and spread it out over multiple frames
+
+What are controlled components?
+A component that controls the input elements within the forms on subsequent user input is called Controlled Component,
+ i.e, every state mutation will have an associated handler function.
+    handleChange(event) {
+    this.setState({value: event.target.value.toUpperCase()})
+    }
+
+What is Lifting State Up in React?
+
+What are the different phases of component lifecycle?
+    Mounting: constructor(), getDerivedStateFromProps(), render(), and componentDidMount() lifecycle methods
+    Updating: This phase covers getDerivedStateFromProps(), shouldComponentUpdate(), render(), getSnapshotBeforeUpdate() and componentDidUpdate() lifecycle methods
+    Unmounting: componentWillUnmount()
+
+    Render
+    Pre-commit
+    Commit 
+
+What are the lifecycle methods of React?
+    getDerivedStateFromProps: right before calling render()
+    componentDidMount: Executed after first rendering
+    shouldComponentUpdate: Determines if the component will be updated or not.it allows you to prevent a re-render if component receives new prop
+    getSnapshotBeforeUpdate: Executed right before rendered output is committed to the DOM
+    componentDidUpdate: Mostly it is used to update the DOM in response to prop or state change. This will not fire if shouldComponentUpdate() returns false.
+    componentWillUnmount 
+
+What are Higher-Order Components?
+
+HOC can be used for many use cases:
+
+    Code reuse, logic and bootstrap abstraction.
+    Render hijacking.
+    State abstraction and manipulation.
+    Props manipulation.
+
+What is context?
+    Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+     For example, authenticated user, locale preference, UI theme need to be accessed in the application by many components.
+
+        const {Provider, Consumer} = React.createContext(defaultValue)
+    
+What is children prop?
+    These include React.Children.map, React.Children.forEach, React.Children.count, React.Children.only, React.Children.toArray
+
+What are fragments?
+    render() {
+    return (
+        <React.Fragment>
+        <ChildA />
+        <ChildB />
+        <ChildC />
+        </React.Fragment>
+    )
+    }
+
+What are error boundaries in React v16?
