@@ -1,0 +1,59 @@
+Design Pattern 
+    - A design pattern is a general repeatable solution to a commonly occurring problem in software design
+    - In React it is mostly to solve an issue regarding rendering and passing props with ease.
+
+
+1. Context API
+    - a way to pass data through the component tree without having to pass props down manually at every level
+    <Provider> - Global state container
+    <Consumer> - Has access to the Provider
+    const { Provider, Consumer } = React.createContext();
+    <Provider value={this.state}>
+
+    <Consumer>{value=>{value.user.name}}</Consumer>
+
+2. Presentation/Container components
+    - separation of concern
+    1. Container Component - Fetching Data 
+        - Logic
+        - eg WeatherWidgetContainer
+        - get weather data from API and store in state
+    2. Presentation Component - Displaying Data 
+        - UI
+        - eg WeatherWidget
+        - this can be a functional component as there is no state
+
+3. Render props
+    1. GET /api/puppies
+    2. Surface 'loading' spinner
+    3. Render adorable puppies
+    4. If error, render error
+    - <Petfeed pet ='kittens' />
+    - <Petfeed pet ='puppies' />
+    - Tight coupling of logic + presentation made our components less reusable and flexible
+    - Solution to this is called render props
+        - a simple technique for sharing code between React components
+        - <MyComponent render={data=>(<div>{data}</div>)}
+        - What they have in common: 
+            - Request data from API
+            - Need loading states
+            - Have error states
+        - Common logic and different presentation
+        - <Resource 
+            path='/api/puppies'
+            render={data=>{
+                if(data.loading) return <p>Loading Puppies ...</p>
+                return data.payload.map(puppy => <div>{puppy}</div>)
+            }}
+            />
+
+-----------------------------------
+
+Render props
+    The term 'render prop' refers to a technique for sharing code between React component using a prop whose value is a function
+    How it works
+        For component that needs to share state with other encapsulated components without creating a different component
+
+
+
+

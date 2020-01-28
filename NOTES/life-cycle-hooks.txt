@@ -1,0 +1,23 @@
+Component Lifecycle
+    constructor()
+1. componentWillMount()
+    - Immediately before inittial rendering; render()
+    - First Lifecycle method to get executed
+    - can change the inititial state before the rendering;
+2. componentDidMount()
+    - Immediately after initial rendering
+    - After render(); 
+3. componentWillReceiveProps(nextProps)
+    - When component is about to receive new props; props change as state change etc
+4. shouldComponentUpdate(nextProps, nextState)
+    - Before rendering, after receiving new props or state
+    - we can return false to prevent rendering
+5. componentWillUpdate(nextProps, nextState)
+    - Before rendering, after receiving new props or state
+    - executed after shouldComponentUpdate() did not return false
+6. componentDidUpdate(prevProps, prevState)
+    - After component's updates are flushed to DOM
+    - after re-rendering component
+7. componentWillUnmount
+    - Immediately before removing component from DOM
+
