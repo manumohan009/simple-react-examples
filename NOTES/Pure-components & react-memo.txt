@@ -1,0 +1,39 @@
+Pure components
+Pure componets donot render if there is no change in props
+A Regular component does not implement the shouldComponentUpdate method. It always return true by default
+A Pure component implements shouldComponentUpdate with a shallow props and state comparison
+    It does a shallow comparison of prevState with currentState & prevProps with currentProps
+    Only if there is a difference, the component is re-rendered
+By avoiding unnecessary re-render, we can get a performance boost
+It is a good idea to ensure that all the children components are also pure to avoid unexpected behaviour
+
+Note: you should not mutate object or arrays in props or state; Always return a new object that reflect the new state
+
+
+Shallow comparison
+    Primitive types
+            a (SC) b returns true if a and b has the same value and are of same type: eg string 'Manu' SC string 'Manu'
+    Complex types
+            a (SC) b returns true if a and b reference the exact same object
+            eg: 
+            var a = [1,2,3]
+            var b = [1,2,3]
+            var c = a
+            var ab_eq = (a === b) // false
+            var ac_eq = (a === b) // true
+
+            var a = { x:1, y:2};
+            var b = { x:1, y:2};
+            var c = a;
+            var ab_eq = (a === b) // false
+            var ac_eq = (a === b) // true
+
+
+
+
+
+React memo
+React 16.6 and above will have memo feature
+React.memo is for functional components
+React.memo is a HOC - it accepts a component and adds something and returns a enhanced component
+React.memo is able to avoid re-render when there is no changes in props 

@@ -10,6 +10,7 @@ function AppIndexPage() {
                 <li><Link to='/count'>Load Count App</Link></li>
                 <li><Link to='/user'>Load User-API App</Link></li>
                 <li><Link to='/user-thunk'>Load User-API-Thunk App</Link></li>
+                <li><Link to='/pure-and-memo'>Load Pure and Memo App</Link></li>
             </ul>
         </>
 
