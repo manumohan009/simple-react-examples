@@ -9,7 +9,8 @@ const CountAppPage = lazy(()=>import('./count-app/index'));
 const CakeContainer = lazy(()=>import('./cake-app/cake-container.component'));
 const UserAPI = lazy(()=>import('./user-api-app/user-api.component'));
 const UserApiThunk = lazy(()=>import('./user-api-app/user-api-thunk.component'));
-const PureAndMemoParent = lazy(()=>import('./pure-and-memo/PureAndMemoParent'))
+const PureAndMemoParent = lazy(()=>import('./pure-and-memo/PureAndMemoParent'));
+const RefAppParent = lazy(()=>import('./ref-app/ref-app-parent'));
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path='/user' component={UserAPI}/>
             <Route path='/user-thunk' component={UserApiThunk}/>
             <Route path='/pure-and-memo' component={PureAndMemoParent}/>
+            <Route path='/ref-demo' component={RefAppParent}/>
           </Switch>
         </Suspense>
       </Router>

@@ -1,0 +1,2 @@
+using ref we can call a method defined in child component from the parent component
+refs can be used only on class based components and cannot be used on functional component
