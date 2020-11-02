@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FocusInput from './focus-input'
+import FrFocusInput from './fr-focus-input'
 
 class RefAppParent extends Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class RefAppParent extends Component {
                  
         }
         this.focusInputRef = React.createRef()
+        this.inputRef = React.createRef()
 
     }
 
@@ -20,11 +22,17 @@ class RefAppParent extends Component {
         this.focusInputRef.current.focusInput()
     }
 
+    handleForwardRefButtonClick = () =>{
+        this.inputRef.current.focus()
+    }
+
     render() {
         return (
             <>
                 <FocusInput ref={this.focusInputRef}/>
-                <button onClick={this.handleButtonClick}>Focus Input</button>
+                <button onClick={this.handleButtonClick}>Focus Input</button><span> // this.focusInputRef.current.focusInput()</span><br/>
+                <FrFocusInput ref={this.inputRef}/>
+                <button onClick={this.handleForwardRefButtonClick}>Focus Input using forward ref</button><span> // this.inputRef.current.focus()</span>
             </>
         )
     }

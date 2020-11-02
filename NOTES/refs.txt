@@ -1,2 +1,7 @@
 using ref we can call a method defined in child component from the parent component
 refs can be used only on class based components and cannot be used on functional component
+
+Forwarding refs
+It is a technique for automatically passing a ref through a component to one of its children (an element in child)
+when a component is passed as a parameter to the forwardRef method, it receives the ref attribute as the second parameter
+The ref in parent component is forwarded to the native input element in the example
