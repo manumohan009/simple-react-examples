@@ -12,6 +12,7 @@ const UserApiThunk = lazy(()=>import('./user-api-app/user-api-thunk.component'))
 const PureAndMemoParent = lazy(()=>import('./pure-and-memo/PureAndMemoParent'));
 const RefAppParent = lazy(()=>import('./ref-app/ref-app-parent'));
 const LoadableParentApp = lazy(()=>import('./loadable-app/loadable-parent'));
+const RegularExpressions = lazy(()=>import('./regular-expressions/regular-expressions'));
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path='/pure-and-memo' component={PureAndMemoParent}/>
             <Route path='/ref-demo' component={RefAppParent}/>
             <Route path='/loadable' component={LoadableParentApp}/>
+            <Route path='/regular-expressions' component={RegularExpressions}/>
           </Switch>
         </Suspense>
       </Router>

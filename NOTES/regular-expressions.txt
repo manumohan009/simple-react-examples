@@ -1,0 +1,47 @@
+1. pattern matching
+2. search & replace functions
+3. validations
+
+https://regex101.com/
+
+By default regx are case sensitive
+e != E
+Regular expressions are treated as objects in js. It has some predefined functions
+    var regex = /E00/
+    var reg = new RegExp("E00","i") // checks for E00 in entire string
+    regx.test()
+can check for a particular character at a particular location
+can check for a range of characters
+can check for a range of patterns
+
+
+FLAGS
+/i - insensitive - case insensitive
+/g - global - don't return after first matching | match all
+
+character sets and range
+    []
+    checks for a character s or a followed by imple anywhere in the text
+        /[sdp]imple/
+    checks for a range of character a-x followed by 00 anywhere in the text
+        /[a-x]00/ 
+        /[a-x A-X]00/
+        /[a-x]00/i
+    exclude a number/character
+        /[^1a]00/
+    repeating characters
+        /[7-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/ - checking for a pattern in entire string
+        /[7-9][0-9]{9}/  -checking for a pattern in entire string with repeated pattern
+        /[7-9]\d{9}/  -\d is same as [0-9]
+    special reg patterns
+        \d - match any digit (same as [0-9])
+        \w - match any word character (same as [a-zA-Z0-9_])
+        \s - match whitespace character (spaces and tabs)
+        \t - match a tab only
+    to define start and end of reg expression
+        ^ - mark the starting (note that when we have ^ inside [] it is a exclude)
+            /^[7-9]\d{9}/
+        $ - mark the end of string
+            /^[7-9]\d{9}$/
+    
+    
