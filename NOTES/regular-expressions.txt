@@ -43,5 +43,20 @@ character sets and range
             /^[7-9]\d{9}/
         $ - mark the end of string
             /^[7-9]\d{9}$/
+        ? - Optional (greedy) quantifier
+            https?
+        ?? - Optional (lazy) quantifier
+
+        \ - to escape
+            \.js
+        | - or
+        *
+        +
+        ()
+        ^
+        []
+        {}
+        
+
     
     
