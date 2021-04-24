@@ -13,10 +13,11 @@ class RegComp extends Component {
     }
 
     render() {
-        console.log('********** Regular Component render **********');
+        console.log('********** Regular Component render **********',this.props);
         return (
             <>
-                Regular Component - { this.props.name}
+                Regular Component - {this.props.person.name}
+                <div>Job: {this.props.job}</div>
             </>
         )
     }
