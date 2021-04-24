@@ -13,6 +13,7 @@ const PureAndMemoParent = lazy(()=>import('./pure-and-memo/PureAndMemoParent'));
 const RefAppParent = lazy(()=>import('./ref-app/ref-app-parent'));
 const LoadableParentApp = lazy(()=>import('./loadable-app/loadable-parent'));
 const RegularExpressions = lazy(()=>import('./regular-expressions/regular-expressions'));
+const BindingThisParent = lazy(()=>import('./binding-this/binding-this-parent'));
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path='/ref-demo' component={RefAppParent}/>
             <Route path='/loadable' component={LoadableParentApp}/>
             <Route path='/regular-expressions' component={RegularExpressions}/>
+            <Route path='/binding-this' component={BindingThisParent}/>
           </Switch>
         </Suspense>
       </Router>
