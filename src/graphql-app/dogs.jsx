@@ -10,6 +10,15 @@ const GET_DOGS = gql`
   }
 `;
 
+const GET_DOG_PHOTO = gql`
+  query Dog($breed: String!) {
+    dog(breed: $breed) {
+      id
+      displayImage
+    }
+  }
+`;
+
 function Dogs(props) {
     console.log(props,'Dog props')
     const onDogSelected = props.onDogSelected
