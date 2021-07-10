@@ -14,6 +14,7 @@ const RefAppParent = lazy(()=>import('./ref-app/ref-app-parent'));
 const LoadableParentApp = lazy(()=>import('./loadable-app/loadable-parent'));
 const RegularExpressions = lazy(()=>import('./regular-expressions/regular-expressions'));
 const BindingThisParent = lazy(()=>import('./binding-this/binding-this-parent'));
+const GraphQLParent = lazy(()=>import('./graphql-app/graphql-parent'));
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path='/loadable' component={LoadableParentApp}/>
             <Route path='/regular-expressions' component={RegularExpressions}/>
             <Route path='/binding-this' component={BindingThisParent}/>
+            <Route path='/graphql' component={GraphQLParent}/>
           </Switch>
         </Suspense>
       </Router>

@@ -14,6 +14,7 @@ function AppIndexPage() {
                 <li><Link to='/ref-demo'>Load Ref App</Link></li>
                 <li><Link to='/regular-expressions'>Load Regular Expressions App</Link></li>
                 <li><Link to='/binding-this'>Binding this</Link></li>
+                <li><Link to='/graphql'>GraphQL App</Link></li>
 
 
                 <li><Link to='/loadable'>Load React Loadable App</Link></li>
