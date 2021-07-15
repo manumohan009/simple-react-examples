@@ -3,7 +3,9 @@ import ClickCounter from './click-counter'
 import Counter from './counter'
 import HoverCounter from './hover-couter'
 import MouseTracker from './mouse-tracker'
+import RandomUser from './random-user'
 import UserName from './user-name'
+import Wrapper from './wrapper'
 
 export default function RenderPropsParent() {
     return (
@@ -17,6 +19,9 @@ export default function RenderPropsParent() {
             )}/>
            <UserName name={(isLoggedIn)=> isLoggedIn ? 'Manu' : 'Guest'}/>
            <MouseTracker/>
+           <Wrapper link="https://jsonplaceholder.typicode.com/users" render={({list, isLoading, error})=>(
+               <RandomUser list={list} isLoading={isLoading} error={error}/>
+           )}/>
         </div>
     )
 }

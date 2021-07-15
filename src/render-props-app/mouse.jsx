@@ -16,7 +16,7 @@ export default class Mouse extends Component {
     }
     render() {
         return (
-            <div style={{ height: '100vh', border:'1px solid red' }} onMouseMove={this.handleMouseMove}>
+            <div style={{ height: '200px', border:'1px solid red' }} onMouseMove={this.handleMouseMove}>
                 {this.props.render(this.state)}
             </div>
         )
