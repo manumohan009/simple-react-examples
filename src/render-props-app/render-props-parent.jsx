@@ -2,6 +2,7 @@ import React from 'react'
 import ClickCounter from './click-counter'
 import Counter from './counter'
 import HoverCounter from './hover-couter'
+import MouseTracker from './mouse-tracker'
 import UserName from './user-name'
 
 export default function RenderPropsParent() {
@@ -15,6 +16,7 @@ export default function RenderPropsParent() {
                 <HoverCounter count={count} incrementCount={incrementCount}/>
             )}/>
            <UserName name={(isLoggedIn)=> isLoggedIn ? 'Manu' : 'Guest'}/>
+           <MouseTracker/>
         </div>
     )
 }
