@@ -17,6 +17,7 @@ const BindingThisParent = lazy(()=>import('./binding-this/binding-this-parent'))
 const GraphQLParent = lazy(()=>import('./graphql-app/graphql-parent'));
 const ReduxSagaParent = lazy(()=>import('./redux/redux-saga-app/redux-saga-parent'));
 const RenderPropsParent = lazy(()=>import('./render-props-app/render-props-parent'))
+const HofApp = lazy(()=>import('./hof-app/hof-app'))
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <Route path='/graphql' component={GraphQLParent}/>
             <Route path='/redux-saga' component={ReduxSagaParent}/>
             <Route path='/render-props' component={RenderPropsParent}/>
+            <Route path='/hof' component={HofApp}/>
           </Switch>
         </Suspense>
       </Router>
