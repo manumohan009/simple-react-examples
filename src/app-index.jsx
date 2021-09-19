@@ -18,6 +18,7 @@ function AppIndexPage() {
                 <li><Link to='/redux-saga'>Redux Saga App</Link></li>
                 <li><Link to='/render-props'>Render Props App</Link></li>
                 <li><Link to='/hof'>Higher Order Function App</Link></li>
+                <li><Link to='/memoize-app'>Memoize App</Link></li>
 
 
                 <li><Link to='/loadable'>Load React Loadable App</Link></li>
